@@ -36,7 +36,7 @@ else
         }
     </style>
     <div class="text-center pt-2">
-        <h4 class="display-6">您正在支付 <span class="text-danger">@Model.Currency.ToBlockchainName(chain)</span> 的 <span class="text-danger">@Model.Currency.ToCurrency(chain,true)</span></h4>
+        <h4 class="display-6">正在支付 <span class="text-danger">@Model.Currency.ToBlockchainName(chain)</span> 的 <span class="text-danger">@Model.Currency.ToCurrency(chain,true)</span></h4>
 
         <div class="d-flex mb-2">
             <div class="input-group m-auto" style="width:410px;">
@@ -45,9 +45,9 @@ else
             </div>
         </div>
         <div class="mb-2 fw-bold display-6 invisible time">
-            剩余时间：<span class="text-danger"><span id="day_show"></span><span id="hour_show"></span><span id="minute_show"></span><span id="second_show"></span></span>
+            订单倒计时：<span class="text-danger"><span id="day_show"></span><span id="hour_show"></span><span id="minute_show"></span><span id="second_show"></span></span>
         </div>
-        <div class="text-danger fw-bold mb-2">请仔细核对区块链和币种，避免丢失资产或支付失败！！！</div>
+        <div class="text-danger fw-bold mb-2">请核对区块链和币种，避免丢失资产或支付失败！</div>
         <div class="mb-2">
             <div class="text-danger fw-bold" style="position:relative;bottom:-6px;height:0;">区块链：@Model.Currency.ToBlockchainName(chain) 币种：@Model.Currency.ToCurrency(chain)</div>
             <img src="data:image/png;base64,@ViewData["QrCode"]" class="border border-gray-300" alt="收款地址">
@@ -64,9 +64,6 @@ else
                 过期时间：<span class="text-danger">@ExpireTime.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss")</span>
             </div>
             <div class="mt-4 text-start">
-                <div>区块链货币购买地址</div>
-                <div>1. 在 <a href="https://www.okx.com/buy-@Model.Currency.ToCurrency(chain)/cny" target="_blank">OKX（欧易）</a> 购买 <span class="text-danger">@Model.Currency.ToCurrency(chain)</span></div>
-                <div>2. 在 <a href="https://p2p.binance.com/zh-CN/express/buy/@Model.Currency.ToCurrency(chain)/CNY" target="_blank">Binance（币安）</a> 购买 <span class="text-danger">@Model.Currency.ToCurrency(chain)</span></div>
             </div>
         </div>
     </div>
